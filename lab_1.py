@@ -4,15 +4,18 @@ from time import time
 import multiprocessing
 import os
 
+def random_double():
+	return randint(-1000000, 1000000) + random()
+
 def generate_data(N: int):
 	data = list()
 
 	for i in range(N):
-		a = randint(-10, 10)
+		a = random_double()
 		while not a:
-			a = randint(-10, 10)
-		b = randint(-10, 10)
-		c = randint(-10, 10)
+			a = random_double()
+		b = random_double()
+		c = random_double()
 
 		data.append([a, b, c])
 
@@ -21,14 +24,14 @@ def generate_data(N: int):
 def discriminant(coefficients: list):
 	return coefficients[1]**2 - 4*coefficients[0]*coefficients[2]
 
-def define_sign(n: int):
+def define_sign(n: float):
 	if n > 0:
 		return '+'
 	elif n < 0:
 		return '-'
 	return '='
 
-def find_roots(discriminant: int, coefficients: list):
+def find_roots(discriminant: float, coefficients: list):
 	if not discriminant:
 		return [-coefficients[1] / 2 / coefficients[0]]
 
@@ -38,7 +41,7 @@ def find_roots(discriminant: int, coefficients: list):
 	
 	return [x_1, x_2]
 
-def find_complex_roots(discriminant: int, coefficients: list):
+def find_complex_roots(discriminant: float, coefficients: list):
 	sqrt_D = sqrt(abs(discriminant))
 	x_1 = f'{-coefficients[1] / 2 / coefficients[0]} + {sqrt_D / 2 / coefficients[0]}i'
 	x_2 = f'{-coefficients[1] / 2 / coefficients[0]} - {sqrt_D / 2 / coefficients[0]}i'
