@@ -25,13 +25,13 @@ def calculate_integral(A: int):
 	return sum 
 
 def trapezoid_rule(f, A, n):
-    dx = 1.0 * A / n
-    sum = 0.5 * (f(0) + f(A))
+	dx = 1.0 * A / n
+	sum = 0.5 * (f(0) + f(A))
     
-    for i in range(1, n):
-        sum += f(i * dx)
+	for i in range(1, n):
+		sum += f(i * dx)
 
-    return sum * dx
+	return sum * dx
 
 def main():
 	N = 1_000_000
