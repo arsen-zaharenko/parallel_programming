@@ -9,7 +9,6 @@ def get_divisors(n: int):
 
 	return result
 
-
 def create_stadium(rows: int, columns: int, portals: int):
 	stadium = {
 				'portals': portals,
