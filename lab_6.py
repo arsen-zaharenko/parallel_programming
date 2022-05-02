@@ -50,7 +50,7 @@ def main():
 	
 	matrix = create_matrix(N, S)
 	print('Initial matrix:')
-	#print_matrix(matrix)
+	print_matrix(matrix)
 
 	print(f'Critical time: {T(matrix, P, N, S)}')
 
